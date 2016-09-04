@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var table: UITableView!
+    
+    private var databaseRef: FIRDatabaseReference!
+    private var databaseHandle: FIRDatabaseHandle!
+    
+    private var users: [FIRDataSnapshot] = []
+    
+    deinit {
+        self.databaseRef.child("users").removeObserverWithHandle(self.databaseHandle)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.databaseRef = FIRDatabase.database().reference()
+        self.databaseHandle = self.databaseRef.child("users").observeEventType(.ChildAdded, withBlock: { (snapshot) -> Void in
+            self.users.append(snapshot)
+            self.table.insertRowsAtIndexPaths([NSIndexPath(forRow: self.users.count-1, inSection: 0)], withRowAnimation: .Automatic)
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +37,24 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
 
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.users.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell! = table.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+
+        let userSnapshot: FIRDataSnapshot! = self.users[indexPath.row]
+        let user = userSnapshot.value as! Dictionary<String, String>
+        let name = user["name"] as String!
+        let address = user["address"] as String!
+        cell.textLabel?.text = name + ": " + address
+
+        return cell
+    }
+    
+}
