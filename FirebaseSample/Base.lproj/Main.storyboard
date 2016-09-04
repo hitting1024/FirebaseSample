@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="206-Sm-Hu9">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="142" width="600" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="baM-Wj-sBe">
@@ -35,16 +35,44 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="c7u-4G-pJk"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="17q-vh-aGU">
+                                <rect key="frame" x="20" y="28" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kOi-qy-vEa">
+                                <rect key="frame" x="20" y="66" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgL-0E-VDG">
+                                <rect key="frame" x="20" y="104" width="560" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save" destination="BYZ-38-t0r" eventType="touchUpInside" id="MId-Ub-OMs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="17q-vh-aGU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="AdZ-yO-Skc"/>
+                            <constraint firstAttribute="trailing" secondItem="17q-vh-aGU" secondAttribute="trailing" constant="20" id="DLM-Lo-N3g"/>
+                            <constraint firstItem="OgL-0E-VDG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="JcS-6h-ZtM"/>
+                            <constraint firstAttribute="trailing" secondItem="kOi-qy-vEa" secondAttribute="trailing" constant="20" id="QfH-Xy-01J"/>
+                            <constraint firstItem="kOi-qy-vEa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="UgD-D8-Ny0"/>
                             <constraint firstAttribute="trailing" secondItem="206-Sm-Hu9" secondAttribute="trailing" id="WW4-mf-io3"/>
+                            <constraint firstAttribute="trailing" secondItem="OgL-0E-VDG" secondAttribute="trailing" constant="20" id="Ytv-WX-sEe"/>
+                            <constraint firstItem="OgL-0E-VDG" firstAttribute="top" secondItem="kOi-qy-vEa" secondAttribute="bottom" constant="8" id="ain-mD-fVx"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="206-Sm-Hu9" secondAttribute="bottom" id="f1N-Mf-BLZ"/>
-                            <constraint firstItem="206-Sm-Hu9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="k7R-3Y-zYW"/>
                             <constraint firstItem="206-Sm-Hu9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uAP-s2-fTX"/>
+                            <constraint firstItem="206-Sm-Hu9" firstAttribute="top" secondItem="OgL-0E-VDG" secondAttribute="bottom" constant="8" id="vRj-fn-9cr"/>
+                            <constraint firstItem="17q-vh-aGU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="zaD-Oj-ZCN"/>
+                            <constraint firstItem="kOi-qy-vEa" firstAttribute="top" secondItem="17q-vh-aGU" secondAttribute="bottom" constant="8" id="zjJ-5b-nYQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressField" destination="kOi-qy-vEa" id="dh1-JD-a0g"/>
+                        <outlet property="nameField" destination="17q-vh-aGU" id="Gim-1t-q46"/>
                         <outlet property="table" destination="206-Sm-Hu9" id="m19-tL-v94"/>
                     </connections>
                 </viewController>

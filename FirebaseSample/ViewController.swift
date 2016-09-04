@@ -12,6 +12,8 @@ import FirebaseDatabase
 class ViewController: UIViewController {
 
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var addressField: UITextField!
     
     private var databaseRef: FIRDatabaseReference!
     private var databaseHandle: FIRDatabaseHandle!
@@ -37,6 +39,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func save() {
+        guard let name = self.nameField.text, address = self.addressField.text else {
+            return
+        }
+        var data = ["name": name]
+        data["address"] = address
+
+        // Push data to Firebase Database
+        self.databaseRef.child("users").childByAutoId().setValue(data)
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
