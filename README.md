@@ -18,7 +18,7 @@ pod update
 
 ### Database Rules
 
-Set database rules above at web console.
+Set database rules below at web console.
 
 ```
 {
