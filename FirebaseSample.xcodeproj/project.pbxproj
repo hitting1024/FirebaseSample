@@ -13,7 +13,7 @@
 		D83B30F51D7C06B1009DDDA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83B30F31D7C06B0009DDDA3 /* Main.storyboard */; };
 		D83B30F71D7C06B1009DDDA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83B30F61D7C06B1009DDDA3 /* Assets.xcassets */; };
 		D83B30FA1D7C06B1009DDDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83B30F81D7C06B1009DDDA3 /* LaunchScreen.storyboard */; };
-		D83B31021D7C0939009DDDA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D83B31011D7C0939009DDDA3 /* GoogleService-Info.plist */; };
+		D8B9894E1EC7074200E06C6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8B9894D1EC7074200E06C6A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		D83B30F61D7C06B1009DDDA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D83B30F91D7C06B1009DDDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D83B30FB1D7C06B1009DDDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D83B31011D7C0939009DDDA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8B9894D1EC7074200E06C6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 				D83B30F61D7C06B1009DDDA3 /* Assets.xcassets */,
 				D83B30F81D7C06B1009DDDA3 /* LaunchScreen.storyboard */,
 				D83B30FB1D7C06B1009DDDA3 /* Info.plist */,
-				D83B31011D7C0939009DDDA3 /* GoogleService-Info.plist */,
+				D8B9894D1EC7074200E06C6A /* GoogleService-Info.plist */,
 			);
 			path = FirebaseSample;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D83B30FA1D7C06B1009DDDA3 /* LaunchScreen.storyboard in Resources */,
-				D83B31021D7C0939009DDDA3 /* GoogleService-Info.plist in Resources */,
+				D8B9894E1EC7074200E06C6A /* GoogleService-Info.plist in Resources */,
 				D83B30F71D7C06B1009DDDA3 /* Assets.xcassets in Resources */,
 				D83B30F51D7C06B1009DDDA3 /* Main.storyboard in Resources */,
 			);
