@@ -49,17 +49,21 @@ class StorageViewController: UIViewController {
     }
     
     @IBAction func uploadImage1() {
-        self.uploadImage("1")
+        self.uploadImage("1", completion: {
+            self.loadImage1()
+        })
     }
 
     @IBAction func uploadImage2() {
-        self.uploadImage("2")
+        self.uploadImage("2", completion: {
+            self.loadImage2()
+        })
     }
     
-    private func uploadImage(_ name: String) {
+    private func uploadImage(_ name: String, completion: @escaping (Void)->Void) {
         let image = UIImage(named: name)!
         self.storageRef.child("\(name).png").put(UIImagePNGRepresentation(image)!, metadata: nil, completion: { metaData, error in
-            
+            completion()
         })
     }
     
