@@ -63,4 +63,25 @@ class StorageViewController: UIViewController {
         })
     }
     
+    @IBAction func removeImage1() {
+        self.removeImage("1", completion: {
+            self.image1.image = nil
+        })
+    }
+    
+    @IBAction func removeImage2() {
+        self.removeImage("2", completion: {
+            self.image2.image = nil
+        })
+    }
+    
+    private func removeImage(_ name: String, completion: @escaping (Void)->Void) {
+        self.storageRef.child("\(name).png").delete(completion: { error in
+            if error != nil {
+                return
+            }
+            completion()
+        })
+    }
+    
 }
