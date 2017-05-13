@@ -14,6 +14,7 @@
 		D83B30F71D7C06B1009DDDA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83B30F61D7C06B1009DDDA3 /* Assets.xcassets */; };
 		D83B30FA1D7C06B1009DDDA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83B30F81D7C06B1009DDDA3 /* LaunchScreen.storyboard */; };
 		D8B9894E1EC7074200E06C6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8B9894D1EC7074200E06C6A /* GoogleService-Info.plist */; };
+		D8CB84EB1EC7206E0001DF6C /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB84EA1EC7206E0001DF6C /* StorageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D83B30F91D7C06B1009DDDA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D83B30FB1D7C06B1009DDDA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B9894D1EC7074200E06C6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D8CB84EA1EC7206E0001DF6C /* StorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				D83B30EF1D7C06B0009DDDA3 /* AppDelegate.swift */,
 				D83B30F11D7C06B0009DDDA3 /* ViewController.swift */,
+				D8CB84EA1EC7206E0001DF6C /* StorageViewController.swift */,
 				D83B30F31D7C06B0009DDDA3 /* Main.storyboard */,
 				D83B30F61D7C06B1009DDDA3 /* Assets.xcassets */,
 				D83B30F81D7C06B1009DDDA3 /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 			files = (
 				D83B30F21D7C06B0009DDDA3 /* ViewController.swift in Sources */,
 				D83B30F01D7C06B0009DDDA3 /* AppDelegate.swift in Sources */,
+				D8CB84EB1EC7206E0001DF6C /* StorageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
