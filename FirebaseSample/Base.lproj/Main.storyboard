@@ -174,6 +174,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fbK-wi-Oue" secondAttribute="trailing" id="jgP-hT-ysM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image1" destination="Fpk-I7-Ttj" id="Wq2-1I-2nP"/>
+                        <outlet property="image2" destination="gRs-Fs-QJp" id="1X6-SV-k8n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYd-Km-cDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
