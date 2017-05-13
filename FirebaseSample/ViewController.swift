@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class ViewController: UIViewController {
 
@@ -18,6 +19,8 @@ class ViewController: UIViewController {
     fileprivate var databaseRef: FIRDatabaseReference!
     fileprivate var databaseHandle: FIRDatabaseHandle!
     
+    fileprivate var storageRef: FIRStorageReference!
+    
     fileprivate var users: [FIRDataSnapshot] = []
     
     deinit {
@@ -27,7 +30,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!
+        let dict = NSDictionary(contentsOfFile: filePath)!
+        let firebaseStorageBucket = dict["STORAGE_BUCKET"] as! String
+
         self.databaseRef = FIRDatabase.database().reference()
+        self.storageRef = FIRStorage.storage().reference(forURL: "gs://\(firebaseStorageBucket)")
+
         self.databaseHandle = self.databaseRef.child("users").observe(.childAdded, with: { (snapshot) -> Void in
             self.users.append(snapshot)
             self.table.insertRows(at: [IndexPath(row: self.users.count-1, section: 0)], with: .automatic)
@@ -48,6 +57,21 @@ class ViewController: UIViewController {
 
         // Push data to Firebase Database
         self.databaseRef.child("users").childByAutoId().setValue(data)
+    }
+    
+    @IBAction func uploadImage1() {
+        self.uploadImage("1")
+    }
+    
+    @IBAction func uploadImage2() {
+        self.uploadImage("2")
+    }
+    
+    private func uploadImage(_ name: String) {        
+        let image = UIImage(named: name)!
+        self.storageRef.child("\(name).png").put(UIImagePNGRepresentation(image)!, metadata: nil, completion: { metaData, error in
+
+        })
     }
     
 }
